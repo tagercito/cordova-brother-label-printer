@@ -47,7 +47,7 @@ import com.brother.ptouch.sdk.PrinterStatus;
 
 public class BrotherPrinter extends CordovaPlugin {
 
-    String modelName = "QL-720NW";
+    String modelName = "TD-2130N";
     private NetPrinter[] netPrinters;
 
     private String ipAddress   = null;
