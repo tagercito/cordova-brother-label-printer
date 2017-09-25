@@ -203,7 +203,6 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
                         Log.d(TAG, "---- tejgo la data ----");
-                        Log.d(TAG, PrinterInfo.Model.TD_2130N);
 
                     myPrinter.setPrinterInfo(myPrinterInfo);
 
@@ -214,6 +213,7 @@ public class BrotherPrinter extends CordovaPlugin {
                     myLabelInfo.isEndCut        = true;
                     myLabelInfo.isHalfCut       = false;
                     myLabelInfo.isSpecialTape   = false;
+                        Log.d(TAG, "---- tejgo label----");
 
                     //label info must be set after setPrinterInfo, it's not in the docs
                     myPrinter.setLabelInfo(myLabelInfo);
@@ -235,7 +235,7 @@ public class BrotherPrinter extends CordovaPlugin {
                     callbackctx.sendPluginResult(result);
 
                 }catch(Exception e){    
-                                            Log.d(TAG, e);
+                                            Log.d(TAG, 'explotose');
 
                     e.printStackTrace();
                 }
