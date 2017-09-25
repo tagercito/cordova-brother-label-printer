@@ -199,7 +199,7 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.port          = PrinterInfo.Port.NET;
                     myPrinterInfo.printMode     = PrinterInfo.PrintMode.ORIGINAL;
                     myPrinterInfo.orientation   = PrinterInfo.Orientation.LANDSCAPE;
-                    myPrinterInfo.paperSize     = PrinterInfo.PaperSize.CUSTOM;
+                    myPrinterInfo.paperSize     = PrinterInfo.PaperSize.A3;
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
                         Log.d(TAG, "---- tejgo la data ----");
