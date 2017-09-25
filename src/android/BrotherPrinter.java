@@ -198,8 +198,8 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.printerModel  = PrinterInfo.Model.TD_2130N;
                     myPrinterInfo.port          = PrinterInfo.Port.NET;
                     myPrinterInfo.printMode     = PrinterInfo.PrintMode.ORIGINAL;
-                    myPrinterInfo.orientation   = PrinterInfo.Orientation.PORTRAIT;
-                //    myPrinterInfo.paperSize     = PrinterInfo.PaperSize.CUSTOM;
+                    myPrinterInfo.orientation   = PrinterInfo.Orientation.LANDSCAPE;
+                    myPrinterInfo.paperSize     = PrinterInfo.PaperSize.CUSTOM;
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
                         Log.d(TAG, "---- tejgo la data ----");
@@ -218,10 +218,10 @@ public class BrotherPrinter extends CordovaPlugin {
                     //label info must be set after setPrinterInfo, it's not in the docs
                     myPrinter.setLabelInfo(myLabelInfo);
 
-                   // String labelWidth = ""+myPrinter.getLabelParam().labelWidth;
-                  //  String paperWidth = ""+myPrinter.getLabelParam().paperWidth;
-                  //  Log.d(TAG, "paperWidth = " + paperWidth);
-                  //  Log.d(TAG, "labelWidth = " + labelWidth);
+                    String labelWidth = ""+myPrinter.getLabelParam().labelWidth;
+                    String paperWidth = ""+myPrinter.getLabelParam().paperWidth;
+                    Log.d(TAG, "paperWidth = " + paperWidth);
+                    Log.d(TAG, "labelWidth = " + labelWidth);
                     
                     PrinterStatus status = myPrinter.printImage(bitmap);
 
