@@ -194,7 +194,7 @@ public class BrotherPrinter extends CordovaPlugin {
 
                     myPrinterInfo = myPrinter.getPrinterInfo();
 
-                    myPrinterInfo.printerModel  = PrinterInfo.Model.QL_720NW;
+                    myPrinterInfo.printerModel  = PrinterInfo.Model.TD_2130N;
                     myPrinterInfo.port          = PrinterInfo.Port.NET;
                     myPrinterInfo.printMode     = PrinterInfo.PrintMode.ORIGINAL;
                     myPrinterInfo.orientation   = PrinterInfo.Orientation.PORTRAIT;
