@@ -235,7 +235,7 @@ public class BrotherPrinter extends CordovaPlugin {
                     callbackctx.sendPluginResult(result);
 
                 }catch(Exception e){    
-                                            Log.d(TAG, 'explotose');
+                                            Log.d(TAG, "explotose");
 
                     e.printStackTrace();
                 }
