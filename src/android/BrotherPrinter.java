@@ -44,7 +44,7 @@ import com.brother.ptouch.sdk.NetPrinter;
 import com.brother.ptouch.sdk.Printer;
 import com.brother.ptouch.sdk.PrinterInfo;
 import com.brother.ptouch.sdk.PrinterStatus;
-import android.os.Environment
+import android.os.Environment;
 
 public class BrotherPrinter extends CordovaPlugin {
 
