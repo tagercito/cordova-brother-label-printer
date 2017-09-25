@@ -202,6 +202,8 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.orientation   = PrinterInfo.Orientation.LANDSCAPE;
                  //   myPrinterInfo.paperSize     = PrinterInfo.PaperSize.A3;
                     myPrinterInfo.customPaper   = Environment.getExternalStorageDirectory().toString() + "/paper/label.lbx";
+                    Log.d(TAG, Environment.getExternalStorageDirectory().toString() + "/paper/label.lbx");
+
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
                         Log.d(TAG, "---- tejgo la data ----");
