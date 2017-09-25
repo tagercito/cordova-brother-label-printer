@@ -44,6 +44,7 @@ import com.brother.ptouch.sdk.NetPrinter;
 import com.brother.ptouch.sdk.Printer;
 import com.brother.ptouch.sdk.PrinterInfo;
 import com.brother.ptouch.sdk.PrinterStatus;
+import android.os.Environment
 
 public class BrotherPrinter extends CordovaPlugin {
 
@@ -200,7 +201,7 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.printMode     = PrinterInfo.PrintMode.ORIGINAL;
                     myPrinterInfo.orientation   = PrinterInfo.Orientation.LANDSCAPE;
                  //   myPrinterInfo.paperSize     = PrinterInfo.PaperSize.A3;
-                    myPrinterInfo.customPaper   = "CUSTOM";
+                    myPrinterInfo.customPaper   = Environment.getExternalStorageDirectory().toString() + "/paper/label.lbx";
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
                         Log.d(TAG, "---- tejgo la data ----");
