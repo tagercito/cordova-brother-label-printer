@@ -188,6 +188,7 @@ public class BrotherPrinter extends CordovaPlugin {
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
                 try{
+                        Log.d(TAG, "---- empiezo a imprimit ----");
 
                     Printer myPrinter = new Printer();
                     PrinterInfo myPrinterInfo = new PrinterInfo();
@@ -201,6 +202,8 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.paperSize     = PrinterInfo.PaperSize.CUSTOM;
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
+                        Log.d(TAG, "---- tejgo la data ----");
+                        Log.d(TAG, PrinterInfo.Model.TD_2130N);
 
                     myPrinter.setPrinterInfo(myPrinterInfo);
 
@@ -232,6 +235,8 @@ public class BrotherPrinter extends CordovaPlugin {
                     callbackctx.sendPluginResult(result);
 
                 }catch(Exception e){    
+                                            Log.d(TAG, e);
+
                     e.printStackTrace();
                 }
             }
