@@ -208,20 +208,21 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
                         Log.d(TAG, "---- tejgo la data ----");
+                    LabelInfo label = myPrinter.getLabelInfo();
 
                     myPrinter.setPrinterInfo(myPrinterInfo);
 
-                    LabelInfo myLabelInfo = new LabelInfo();
+                  //  LabelInfo myLabelInfo = new LabelInfo();
 
-                    myLabelInfo.labelNameIndex  = myPrinter.checkLabelInPrinter();
-                    myLabelInfo.isAutoCut       = true;
-                    myLabelInfo.isEndCut        = true;
-                    myLabelInfo.isHalfCut       = false;
-                    myLabelInfo.isSpecialTape   = false;
+                 //   myLabelInfo.labelNameIndex  = myPrinter.checkLabelInPrinter();
+                   // myLabelInfo.isAutoCut       = true;
+                   // myLabelInfo.isEndCut        = true;
+                  //  myLabelInfo.isHalfCut       = false;
+                  //  myLabelInfo.isSpecialTape   = false;
                         Log.d(TAG, "---- tejgo label----");
 
                     //label info must be set after setPrinterInfo, it's not in the docs
-                    myPrinter.setLabelInfo(myLabelInfo);
+               //     myPrinter.setLabelInfo(myLabelInfo);
 
                    // String labelWidth = ""+myPrinter.getLabelParam().labelWidth;
                    // String paperWidth = ""+myPrinter.getLabelParam().paperWidth;
@@ -322,7 +323,6 @@ public class BrotherPrinter extends CordovaPlugin {
                 //label info must be set after setPrinterInfo, it's not in the docs
                 //myPrinter.setLabelInfo(myLabelInfo);
 
-                LabelInfo label = myPrinter.getLabelInfo();
                 try {
                     File outputDir = context.getCacheDir();
                     File outputFile = new File(outputDir.getPath() + "configure.prn");
