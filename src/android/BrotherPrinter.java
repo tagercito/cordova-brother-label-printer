@@ -208,21 +208,22 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
                         Log.d(TAG, "---- tejgo la data ----");
-                    LabelInfo myLabelInfo = myPrinter.getLabelInfo();
 
-                    myPrinter.setPrinterInfo(myPrinterInfo);
 
                   //  LabelInfo myLabelInfo = new LabelInfo();
 
-               //     myLabelInfo.labelNameIndex  = myPrinter.checkLabelInPrinter();
-                    myLabelInfo.isAutoCut       = true;
-                    myLabelInfo.isEndCut        = true;
-                    myLabelInfo.isHalfCut       = false;
-                    myLabelInfo.isSpecialTape   = false;
+                    myPrinterInfo.labelNameIndex  = 1
+                    myPrinterInfo.isAutoCut       = true;
+                    myPrinterInfo.isEndCut        = true;
+                    myPrinterInfo.isHalfCut       = false;
+                    myPrinterInfo.isSpecialTape   = false;
+                    myPrinter.setPrinterInfo(myPrinterInfo);
+                    LabelInfo myLabelInfo = myPrinter.getLabelInfo();
+
                         Log.d(TAG, "---- tejgo label----");
 
                     //label info must be set after setPrinterInfo, it's not in the docs
-                    myPrinter.setLabelInfo(myLabelInfo);
+                 //   myPrinter.setLabelInfo(myLabelInfo);
 
                    // String labelWidth = ""+myPrinter.getLabelParam().labelWidth;
                    // String paperWidth = ""+myPrinter.getLabelParam().paperWidth;
