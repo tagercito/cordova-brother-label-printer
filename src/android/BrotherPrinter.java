@@ -214,11 +214,11 @@ public class BrotherPrinter extends CordovaPlugin {
 
                   //  LabelInfo myLabelInfo = new LabelInfo();
 
-                 //   myPrinterInfo.labelNameIndex  = 1;
-                //    myPrinterInfo.isAutoCut       = true;
-                   // myPrinterInfo.isEndCut        = true;
-                   // myPrinterInfo.isHalfCut       = false;
-                  //  myPrinterInfo.isSpecialTape   = false;
+                    myPrinterInfo.labelNameIndex  = 1;
+                    myPrinterInfo.isAutoCut       = true;
+                    myPrinterInfo.isEndCut        = true;
+                    myPrinterInfo.isHalfCut       = false;
+                    myPrinterInfo.isSpecialTape   = false;
                     myPrinter.setPrinterInfo(myPrinterInfo);
                  //   LabelInfo myLabelInfo = myPrinter.getLabelInfo();
 
