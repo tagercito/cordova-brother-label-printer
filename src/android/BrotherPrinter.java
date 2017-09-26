@@ -208,21 +208,21 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
                         Log.d(TAG, "---- tejgo la data ----");
-                    LabelInfo label = myPrinter.getLabelInfo();
+                    LabelInfo myLabelInfo = myPrinter.getLabelInfo();
 
                     myPrinter.setPrinterInfo(myPrinterInfo);
 
                   //  LabelInfo myLabelInfo = new LabelInfo();
 
-                 //   myLabelInfo.labelNameIndex  = myPrinter.checkLabelInPrinter();
-                   // myLabelInfo.isAutoCut       = true;
-                   // myLabelInfo.isEndCut        = true;
-                  //  myLabelInfo.isHalfCut       = false;
-                  //  myLabelInfo.isSpecialTape   = false;
+                    myLabelInfo.labelNameIndex  = myPrinter.checkLabelInPrinter();
+                    myLabelInfo.isAutoCut       = true;
+                    myLabelInfo.isEndCut        = true;
+                    myLabelInfo.isHalfCut       = false;
+                    myLabelInfo.isSpecialTape   = false;
                         Log.d(TAG, "---- tejgo label----");
 
                     //label info must be set after setPrinterInfo, it's not in the docs
-               //     myPrinter.setLabelInfo(myLabelInfo);
+                    myPrinter.setLabelInfo(myLabelInfo);
 
                    // String labelWidth = ""+myPrinter.getLabelParam().labelWidth;
                    // String paperWidth = ""+myPrinter.getLabelParam().paperWidth;
@@ -230,6 +230,7 @@ public class BrotherPrinter extends CordovaPlugin {
                   //  Log.d(TAG, "labelWidth = " + labelWidth);
                     
                     PrinterStatus status = myPrinter.printImage(bitmap);
+                        Log.d(TAG, "---- mande a imprimir? ----");
 
                     //casting to string doesn't work, but this does... wtf Brother
                     String status_code = ""+status.errorCode;
