@@ -58,7 +58,7 @@ public class BrotherPrinter extends CordovaPlugin {
 
     //token to make it easy to grep logcat
     private static final String TAG = "print";
-
+    private String CUSTOM_PAPER_FOLDER = Environment.getExternalStorageDirectory().toString() + "/customPaperFileSet/";
     private CallbackContext callbackctx;
 
     @Override
@@ -200,8 +200,9 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.port          = PrinterInfo.Port.NET;
                     myPrinterInfo.printMode     = PrinterInfo.PrintMode.ORIGINAL;
                     myPrinterInfo.orientation   = PrinterInfo.Orientation.LANDSCAPE;
-                 //   myPrinterInfo.paperSize     = PrinterInfo.PaperSize.A3;
-                //    myPrinterInfo.customPaper   = "/sdcard/customPaperFileSet/pdt3635.bin";
+                    myPrinterInfo.paperSize     = PrinterInfo.PaperSize.CUSTOM;
+                    myPrinterInfo.numberOfCopies  = 1;
+                    myPrinterInfo.customPaper   = CUSTOM_PAPER_FOLDER + "pdt3635.bin";
                    // Log.d(TAG, Environment.getExternalStorageDirectory().toString() + "/paper/label.lbx");
                   //  myPrinterInfo.customPaperWidth = 100;
                  //   myPrinterInfo.customPaperLength = 100;
@@ -212,13 +213,13 @@ public class BrotherPrinter extends CordovaPlugin {
 
                   //  LabelInfo myLabelInfo = new LabelInfo();
 
-                    myPrinterInfo.labelNameIndex  = 1;
-                    myPrinterInfo.isAutoCut       = true;
+                 //   myPrinterInfo.labelNameIndex  = 1;
+                //    myPrinterInfo.isAutoCut       = true;
                    // myPrinterInfo.isEndCut        = true;
-                    myPrinterInfo.isHalfCut       = false;
-                    myPrinterInfo.isSpecialTape   = false;
+                   // myPrinterInfo.isHalfCut       = false;
+                  //  myPrinterInfo.isSpecialTape   = false;
                     myPrinter.setPrinterInfo(myPrinterInfo);
-                    LabelInfo myLabelInfo = myPrinter.getLabelInfo();
+                 //   LabelInfo myLabelInfo = myPrinter.getLabelInfo();
 
                         Log.d(TAG, "---- tejgo label----");
 
