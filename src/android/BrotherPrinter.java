@@ -201,10 +201,10 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.printMode     = PrinterInfo.PrintMode.ORIGINAL;
                     myPrinterInfo.orientation   = PrinterInfo.Orientation.LANDSCAPE;
                  //   myPrinterInfo.paperSize     = PrinterInfo.PaperSize.A3;
-                    myPrinterInfo.customPaper   = "/sdcard/customPaperFileSet/pdt3635.bin";
+                //    myPrinterInfo.customPaper   = "/sdcard/customPaperFileSet/pdt3635.bin";
                    // Log.d(TAG, Environment.getExternalStorageDirectory().toString() + "/paper/label.lbx");
-                    myPrinterInfo.customPaperWidth = 100;
-                    myPrinterInfo.customPaperLength = 100;
+                  //  myPrinterInfo.customPaperWidth = 100;
+                 //   myPrinterInfo.customPaperLength = 100;
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
                         Log.d(TAG, "---- tejgo la data ----");
@@ -214,7 +214,7 @@ public class BrotherPrinter extends CordovaPlugin {
 
                   //  LabelInfo myLabelInfo = new LabelInfo();
 
-                    myLabelInfo.labelNameIndex  = myPrinter.checkLabelInPrinter();
+               //     myLabelInfo.labelNameIndex  = myPrinter.checkLabelInPrinter();
                     myLabelInfo.isAutoCut       = true;
                     myLabelInfo.isEndCut        = true;
                     myLabelInfo.isHalfCut       = false;
