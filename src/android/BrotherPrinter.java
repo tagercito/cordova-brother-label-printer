@@ -203,7 +203,7 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.paperSize     = PrinterInfo.PaperSize.CUSTOM;
                     myPrinterInfo.numberOfCopies  = 1;
                     myPrinterInfo.customPaper   = CUSTOM_PAPER_FOLDER + "pdt3635.bin";
-                    LOG.d(TAG, CUSTOM_PAPER_FOLDER + "pdt3635.bin");
+                    Log.d(TAG, CUSTOM_PAPER_FOLDER + "pdt3635.bin");
                    // Log.d(TAG, Environment.getExternalStorageDirectory().toString() + "/paper/label.lbx");
                   //  myPrinterInfo.customPaperWidth = 100;
                  //   myPrinterInfo.customPaperLength = 100;
