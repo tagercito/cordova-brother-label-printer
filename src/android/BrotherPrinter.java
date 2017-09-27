@@ -192,7 +192,7 @@ public class BrotherPrinter extends CordovaPlugin {
 
                     Printer myPrinter = new Printer();
                     PrinterInfo myPrinterInfo = new PrinterInfo();
-                    myPrinter.setCustomPaper(Model.TD_2130N,"TD_2130N_57mm.bin")
+                    myPrinter.setCustomPaper(Model.TD_2130N,"TD_2130N_57mm.bin");
                     myPrinterInfo = myPrinter.getPrinterInfo();
 
                     myPrinterInfo.printerModel  = PrinterInfo.Model.TD_2130N;
