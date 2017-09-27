@@ -205,8 +205,8 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
                     myPrinterInfo.rjDensity = 0;
-                    muPrinterInfo.rotate180 = false;
-                    muPrinterInfo.peelMode = false;
+                    myPrinterInfo.rotate180 = false;
+                    myPrinterInfo.peelMode = false;
 
                     myPrinter.setPrinterInfo(myPrinterInfo);
 
