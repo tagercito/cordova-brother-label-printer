@@ -220,12 +220,12 @@ public class BrotherPrinter extends CordovaPlugin {
                   //  myPrinterInfo.isHalfCut       = false;
                  //   myPrinterInfo.isSpecialTape   = false;
                     myPrinter.setPrinterInfo(myPrinterInfo);
-                 //   LabelInfo myLabelInfo = myPrinter.getLabelInfo();
+                    LabelInfo myLabelInfo = myPrinter.getLabelInfo();
 
                         Log.d(TAG, "---- tejgo label----");
 
                     //label info must be set after setPrinterInfo, it's not in the docs
-                 //   myPrinter.setLabelInfo(myLabelInfo);
+                    myPrinter.setLabelInfo(myLabelInfo);
 
                    // String labelWidth = ""+myPrinter.getLabelParam().labelWidth;
                    // String paperWidth = ""+myPrinter.getLabelParam().paperWidth;
