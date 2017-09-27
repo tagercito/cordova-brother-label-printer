@@ -199,9 +199,7 @@ public class BrotherPrinter extends CordovaPlugin {
                   //  myPrinterInfo.printMode     = PrinterInfo.PrintMode.ORIGINAL;
                     myPrinterInfo.orientation   = PrinterInfo.Orientation.PORTRAIT;
                   //  myPrinterInfo.paperSize     = PrinterInfo.PaperSize.CUSTOM;
-                    myPrinterInfo.customPaper =  "/sdcard/customPaperFileSet/TD2130N_57mm.bin";
-                                        Log.d(TAG, Environment.getExternalStorageDirectory().toString() + "/customPaperFileSet/TD2130N_57mm.bin");
-
+                    myPrinterInfo.customPaper =  "TD2130N_57mm.bin";
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
                     myPrinterInfo.rjDensity = 0;
@@ -225,8 +223,9 @@ public class BrotherPrinter extends CordovaPlugin {
                 //    String paperWidth = ""+myPrinter.getLabelParam().paperWidth;
                 //    Log.d(TAG, "paperWidth = " + paperWidth);
                  //   Log.d(TAG, "labelWidth = " + labelWidth);
-                    
+                    myPrinter.startCommunication();
                     PrinterStatus status = myPrinter.printImage(bitmap);
+                    myPrinter.endCommunication();
 
                     //casting to string doesn't work, but this does... wtf Brother
                     String status_code = ""+status.errorCode;
