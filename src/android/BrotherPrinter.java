@@ -188,52 +188,40 @@ public class BrotherPrinter extends CordovaPlugin {
 
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
-                try{
-                        Log.d(TAG, "---- empiezo a imprimit ----");
+ try{
 
                     Printer myPrinter = new Printer();
                     PrinterInfo myPrinterInfo = new PrinterInfo();
-
+                    myPrinter.setCustomPaper(Model.TD_2130N,”TD_2130N_57mm.bin”)
                     myPrinterInfo = myPrinter.getPrinterInfo();
 
                     myPrinterInfo.printerModel  = PrinterInfo.Model.TD_2130N;
                     myPrinterInfo.port          = PrinterInfo.Port.NET;
                     myPrinterInfo.printMode     = PrinterInfo.PrintMode.ORIGINAL;
-                    myPrinterInfo.orientation   = PrinterInfo.Orientation.LANDSCAPE;
+                    myPrinterInfo.orientation   = PrinterInfo.Orientation.PORTRAIT;
                     myPrinterInfo.paperSize     = PrinterInfo.PaperSize.CUSTOM;
-                    myPrinterInfo.numberOfCopies  = 1;
-                    myPrinterInfo.customPaper   = "TD2130N_57mm.bin";
-                    Log.d(TAG, CUSTOM_PAPER_FOLDER + "pdt3635.bin");
-                   // Log.d(TAG, Environment.getExternalStorageDirectory().toString() + "/paper/label.lbx");
-                  //  myPrinterInfo.customPaperWidth = 100;
-                 //   myPrinterInfo.customPaperLength = 100;
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
-                        Log.d(TAG, "---- tejgo la data ----");
 
-
-                  //  LabelInfo myLabelInfo = new LabelInfo();
-
-             //       myPrinterInfo.labelNameIndex  = 1;
-                //    myPrinterInfo.isAutoCut       = true;
-                //    myPrinterInfo.isEndCut        = true;
-                  //  myPrinterInfo.isHalfCut       = false;
-                 //   myPrinterInfo.isSpecialTape   = false;
                     myPrinter.setPrinterInfo(myPrinterInfo);
-                    LabelInfo myLabelInfo = myPrinter.getLabelInfo();
 
-                        Log.d(TAG, "---- tejgo label----");
+                    LabelInfo myLabelInfo = new LabelInfo();
+
+                    myLabelInfo.labelNameIndex  = myPrinter.checkLabelInPrinter();
+                    myLabelInfo.isAutoCut       = true;
+                    myLabelInfo.isEndCut        = true;
+                    myLabelInfo.isHalfCut       = false;
+                    myLabelInfo.isSpecialTape   = false;
 
                     //label info must be set after setPrinterInfo, it's not in the docs
                     myPrinter.setLabelInfo(myLabelInfo);
 
-                   // String labelWidth = ""+myPrinter.getLabelParam().labelWidth;
-                   // String paperWidth = ""+myPrinter.getLabelParam().paperWidth;
-                  //  Log.d(TAG, "paperWidth = " + paperWidth);
-                  //  Log.d(TAG, "labelWidth = " + labelWidth);
+                    String labelWidth = ""+myPrinter.getLabelParam().labelWidth;
+                    String paperWidth = ""+myPrinter.getLabelParam().paperWidth;
+                    Log.d(TAG, "paperWidth = " + paperWidth);
+                    Log.d(TAG, "labelWidth = " + labelWidth);
                     
                     PrinterStatus status = myPrinter.printImage(bitmap);
-                        Log.d(TAG, "---- mande a imprimir? ----");
 
                     //casting to string doesn't work, but this does... wtf Brother
                     String status_code = ""+status.errorCode;
@@ -245,8 +233,6 @@ public class BrotherPrinter extends CordovaPlugin {
                     callbackctx.sendPluginResult(result);
 
                 }catch(Exception e){    
-                                            Log.d(TAG, "explotose");
-
                     e.printStackTrace();
                 }
             }
