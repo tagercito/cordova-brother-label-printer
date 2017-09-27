@@ -188,6 +188,17 @@ public class BrotherPrinter extends CordovaPlugin {
 
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
+                
+                String path = Environment.getExternalStorageDirectory().toString()+"/customPaperFileSet";
+                Log.d(TAG, "Path: " + path);
+                File directory = new File(path);
+                File[] files = directory.listFiles();
+                Log.d(TAG, "Size: "+ files.length);
+                for (int i = 0; i < files.length; i++)
+                {
+                    Log.d(TAG, "FileName:" + files[i].getName());
+                }
+        
                 try{
 
                     Printer myPrinter = new Printer();
