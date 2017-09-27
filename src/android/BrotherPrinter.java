@@ -216,10 +216,10 @@ public class BrotherPrinter extends CordovaPlugin {
                     //label info must be set after setPrinterInfo, it's not in the docs
                     myPrinter.setLabelInfo(myLabelInfo);
 
-                    String labelWidth = ""+myPrinter.getLabelParam().labelWidth;
-                    String paperWidth = ""+myPrinter.getLabelParam().paperWidth;
-                    Log.d(TAG, "paperWidth = " + paperWidth);
-                    Log.d(TAG, "labelWidth = " + labelWidth);
+                //    String labelWidth = ""+myPrinter.getLabelParam().labelWidth;
+                //    String paperWidth = ""+myPrinter.getLabelParam().paperWidth;
+                //    Log.d(TAG, "paperWidth = " + paperWidth);
+                 //   Log.d(TAG, "labelWidth = " + labelWidth);
                     
                     PrinterStatus status = myPrinter.printImage(bitmap);
 
