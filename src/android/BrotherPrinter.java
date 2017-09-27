@@ -118,6 +118,7 @@ public class BrotherPrinter extends CordovaPlugin {
                             netPrinter.put("macAddress", netPrinters[i].macAddress);
                             netPrinter.put("serNo", netPrinters[i].serNo);
                             netPrinter.put("nodeName", netPrinters[i].nodeName);
+                            netPrinter.put("model", netPrinters[i].modelName);
 
                             netPrintersList.add(netPrinter);
 
