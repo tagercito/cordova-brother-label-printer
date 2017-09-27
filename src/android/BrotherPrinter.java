@@ -193,7 +193,8 @@ public class BrotherPrinter extends CordovaPlugin {
                     Printer myPrinter = new Printer();
                     PrinterInfo myPrinterInfo = new PrinterInfo();
                     myPrinterInfo = myPrinter.getPrinterInfo();
-
+                    Log.d(TAG, "----PATH----");
+                    Log.d(TAG, myPrinterInfo.workPath);
                     myPrinterInfo.printerModel  = PrinterInfo.Model.TD_2130N;
                     myPrinterInfo.port          = PrinterInfo.Port.NET;
                   //  myPrinterInfo.printMode     = PrinterInfo.PrintMode.ORIGINAL;
