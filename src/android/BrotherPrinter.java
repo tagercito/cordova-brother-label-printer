@@ -193,28 +193,28 @@ public class BrotherPrinter extends CordovaPlugin {
                     Printer myPrinter = new Printer();
                     PrinterInfo myPrinterInfo = new PrinterInfo();
                     myPrinterInfo = myPrinter.getPrinterInfo();
-                    myPrinter.setCustomPaper(PrinterInfo.Model.TD_2130N, "TD_2130N_57mm.bin");
 
                     myPrinterInfo.printerModel  = PrinterInfo.Model.TD_2130N;
                     myPrinterInfo.port          = PrinterInfo.Port.NET;
-                    myPrinterInfo.printMode     = PrinterInfo.PrintMode.ORIGINAL;
-                    myPrinterInfo.orientation   = PrinterInfo.Orientation.PORTRAIT;
-                    myPrinterInfo.paperSize     = PrinterInfo.PaperSize.CUSTOM;
+                  //  myPrinterInfo.printMode     = PrinterInfo.PrintMode.ORIGINAL;
+           //         myPrinterInfo.orientation   = PrinterInfo.Orientation.PORTRAIT;
+                  //  myPrinterInfo.paperSize     = PrinterInfo.PaperSize.CUSTOM;
+                    myPrinterInfo.customPaper = Environment.getExternalStorageDirectory().toString() + "TD2130N_57mm.bin";
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
 
                     myPrinter.setPrinterInfo(myPrinterInfo);
 
-                    LabelInfo myLabelInfo = new LabelInfo();
+                   // LabelInfo myLabelInfo = new LabelInfo();
 
-                    myLabelInfo.labelNameIndex  = myPrinter.checkLabelInPrinter();
-                    myLabelInfo.isAutoCut       = true;
-                    myLabelInfo.isEndCut        = true;
-                    myLabelInfo.isHalfCut       = false;
-                    myLabelInfo.isSpecialTape   = false;
+//                    myLabelInfo.labelNameIndex  = myPrinter.checkLabelInPrinter();
+  //                  myLabelInfo.isAutoCut       = true;
+    //                myLabelInfo.isEndCut        = true;
+      //              myLabelInfo.isHalfCut       = false;
+        //            myLabelInfo.isSpecialTape   = false;
 
                     //label info must be set after setPrinterInfo, it's not in the docs
-                    myPrinter.setLabelInfo(myLabelInfo);
+            //        myPrinter.setLabelInfo(myLabelInfo);
 
                 //    String labelWidth = ""+myPrinter.getLabelParam().labelWidth;
                 //    String paperWidth = ""+myPrinter.getLabelParam().paperWidth;
