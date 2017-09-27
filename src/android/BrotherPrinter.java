@@ -199,7 +199,7 @@ public class BrotherPrinter extends CordovaPlugin {
                   //  myPrinterInfo.printMode     = PrinterInfo.PrintMode.ORIGINAL;
            //         myPrinterInfo.orientation   = PrinterInfo.Orientation.PORTRAIT;
                   //  myPrinterInfo.paperSize     = PrinterInfo.PaperSize.CUSTOM;
-                    myPrinterInfo.customPaper = Environment.getExternalStorageDirectory().toString() + "/TD2130N_57mm.bin";
+                    myPrinterInfo.customPaper =  "/TD2130N_57mm.bin";
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
 
