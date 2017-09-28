@@ -189,28 +189,14 @@ public class BrotherPrinter extends CordovaPlugin {
 
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
-                
-                String path = Environment.getExternalStorageDirectory().toString()+"/customPaperFileSet";
-                Log.d(TAG, "Path: " + path);
-                File directory = new File(path);
-                File[] files = directory.listFiles();
-                Log.d(TAG, "Size: "+ files.length);
-                for (int i = 0; i < files.length; i++)
-                {
-                    Log.d(TAG, "FileName:" + files[i].getName());
-                }
-        
                 try{
 
                     Printer myPrinter = new Printer();
                     PrinterInfo myPrinterInfo = new PrinterInfo();
                     myPrinterInfo = myPrinter.getPrinterInfo();
-                    Log.d(TAG, "----PATH----");
                     myPrinterInfo.printerModel  = PrinterInfo.Model.TD_2130N;
                     myPrinterInfo.port          = PrinterInfo.Port.NET;
-                  //  myPrinterInfo.printMode     = PrinterInfo.PrintMode.ORIGINAL;
                     myPrinterInfo.orientation   = PrinterInfo.Orientation.LANDSCAPE;
-                  //  myPrinterInfo.paperSize     = PrinterInfo.PaperSize.CUSTOM;
                     myPrinterInfo.customPaper =  Environment.getExternalStorageDirectory().toString()+"/customPaperFileSet/bst200ct-1.bin";
                     myPrinterInfo.ipAddress     = ipAddress;
                     myPrinterInfo.macAddress    = macAddress;
@@ -219,22 +205,6 @@ public class BrotherPrinter extends CordovaPlugin {
                     myPrinterInfo.peelMode = false;
 
                     myPrinter.setPrinterInfo(myPrinterInfo);
-
-                   // LabelInfo myLabelInfo = new LabelInfo();
-
-//                    myLabelInfo.labelNameIndex  = myPrinter.checkLabelInPrinter();
-  //                  myLabelInfo.isAutoCut       = true;
-    //                myLabelInfo.isEndCut        = true;
-      //              myLabelInfo.isHalfCut       = false;
-        //            myLabelInfo.isSpecialTape   = false;
-
-                    //label info must be set after setPrinterInfo, it's not in the docs
-            //        myPrinter.setLabelInfo(myLabelInfo);
-
-                //    String labelWidth = ""+myPrinter.getLabelParam().labelWidth;
-                //    String paperWidth = ""+myPrinter.getLabelParam().paperWidth;
-                //    Log.d(TAG, "paperWidth = " + paperWidth);
-                 //   Log.d(TAG, "labelWidth = " + labelWidth);
                     myPrinter.startCommunication();
                     PrinterStatus status = myPrinter.printImage(bitmap);
                     myPrinter.endCommunication();
